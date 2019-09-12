@@ -1,0 +1,30 @@
+{
+  "name": "acme-full-stack-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --watch --mode=development",
+    "start:dev": "nodemon server.js --ignore dist/ --ignore src/ & npm run webpack"
+  },
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.40.0",
+    "webpack-cli": "^3.3.8"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.18.4"
+  }
+}
