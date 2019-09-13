@@ -15,5 +15,8 @@ const syncAndSeed = async()=> {
 
 
 module.exports = {
-  syncAndSeed
+  syncAndSeed,
+  models: {
+    User
+  }
 };
