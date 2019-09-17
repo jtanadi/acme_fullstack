@@ -7,6 +7,12 @@ nav {
   justify-content: space-around;
 }
 
+nav a {
+  padding: 0.5rem;
+}
 .active {
   text-decoration: none;
+  background-color: tomato;
+  border-radius: 0.25rem;
+  color: white;
 }
