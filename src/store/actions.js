@@ -46,7 +46,7 @@ const toggleUser = (user) => {
   const updatedUser = {...user, active:_user}
   return async(dispatch) => {
     dispatch(setLoading(true))
-    //await axios.put(`/api/users/${user.id}`, updatedUser)
+    await axios.put(`/api/users/${user.id}`, updatedUser)
     dispatch(setLoading(false))
     return dispatch({type: TOGGLE_USER, user:updatedUser})
   }
