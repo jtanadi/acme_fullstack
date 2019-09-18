@@ -1,4 +1,4 @@
-import { DESTROY_USER, SET_USERS, SET_LOADING } from './constants';
+import { DESTROY_USER, SET_USERS, SET_LOADING, TOGGLE_USER} from './constants';
 import axios from 'axios';
 
 
@@ -41,5 +41,14 @@ const destroyUser = (user)=> {
     return dispatch(_destroyUser(user));
   };
 };
-
-export { fetchUsers, destroyUser };
+const toggleUser = (user) => {
+  const _user = !user.active
+  const updatedUser = {...user, active:_user}
+  return async(dispatch) => {
+    dispatch(setLoading(true))
+    //await axios.put(`/api/users/${user.id}`, updatedUser)
+    dispatch(setLoading(false))
+    return dispatch({type: TOGGLE_USER, user:updatedUser})
+  }
+}
+export { fetchUsers, destroyUser, toggleUser};
